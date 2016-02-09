@@ -18,68 +18,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgA-Qj-gMH">
-                                <rect key="frame" x="16" y="57" width="88" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgA-Qj-gMH">
+                                <rect key="frame" x="256" y="57" width="88" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Z9Q-oJ-Y98"/>
+                                    <constraint firstAttribute="width" constant="88" id="fBb-zm-W8W"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IL9-ab-oXS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IL9-ab-oXS">
                                 <rect key="frame" x="16" y="86" width="568" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="NXA-rm-RoQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="u5d-ja-NFa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VL-bR-6Ij">
-                                <rect key="frame" x="16" y="124" width="150" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="YYA-KL-dMz"/>
-                                </constraints>
-                                <state key="normal" title="Set Default Label Text">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YKi-jh-Qmt"/>
-                                </connections>
-                            </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="256" placeholderIntrinsicHeight="206" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="npg-CE-EpB">
-                                <rect key="frame" x="16" y="162" width="320" height="320"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="256" placeholderIntrinsicHeight="206" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="npg-CE-EpB">
+                                <rect key="frame" x="140" y="129" width="320" height="320"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="rZg-QD-6te"/>
+                                    <constraint firstAttribute="width" constant="320" id="umw-z2-PSh"/>
+                                    <constraint firstAttribute="height" constant="320" id="zq3-XZ-6FA"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Md0-pY-cz2" appends="YES" id="4qp-o7-qr2"/>
                                 </connections>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="AUP-4q-0bb" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="464" width="424" height="58"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="AUP-4q-0bb" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                <rect key="frame" x="53" y="457" width="527" height="58"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4VL-bR-6Ij" firstAttribute="top" secondItem="IL9-ab-oXS" secondAttribute="bottom" constant="8" symbolic="YES" id="3zz-2Z-NxC"/>
-                            <constraint firstItem="IL9-ab-oXS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4oj-0Y-kSx"/>
-                            <constraint firstItem="4VL-bR-6Ij" firstAttribute="leading" secondItem="IL9-ab-oXS" secondAttribute="leading" id="9fx-fZ-axv"/>
-                            <constraint firstItem="4VL-bR-6Ij" firstAttribute="leading" secondItem="npg-CE-EpB" secondAttribute="leading" id="A6G-fP-NqW"/>
-                            <constraint firstItem="ZgA-Qj-gMH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="Cz4-j9-KZG"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="npg-CE-EpB" secondAttribute="bottom" constant="118" id="OYc-gP-sYt"/>
-                            <constraint firstItem="npg-CE-EpB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PsU-Ik-dRH"/>
-                            <constraint firstItem="npg-CE-EpB" firstAttribute="top" secondItem="4VL-bR-6Ij" secondAttribute="bottom" constant="8" symbolic="YES" id="QIQ-jz-zgj"/>
-                            <constraint firstItem="IL9-ab-oXS" firstAttribute="top" secondItem="ZgA-Qj-gMH" secondAttribute="bottom" constant="8" symbolic="YES" id="dfS-oI-Dhi"/>
-                            <constraint firstItem="IL9-ab-oXS" firstAttribute="leading" secondItem="ZgA-Qj-gMH" secondAttribute="leading" id="yBf-0Y-2oc"/>
+                            <constraint firstItem="IL9-ab-oXS" firstAttribute="top" secondItem="ZgA-Qj-gMH" secondAttribute="bottom" constant="8" symbolic="YES" id="Bdz-kC-6ft"/>
+                            <constraint firstItem="AUP-4q-0bb" firstAttribute="top" secondItem="npg-CE-EpB" secondAttribute="bottom" constant="8" symbolic="YES" id="Cwy-eP-Imt"/>
+                            <constraint firstItem="ZgA-Qj-gMH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="DNx-An-Vfn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AUP-4q-0bb" secondAttribute="bottom" constant="85" id="QgM-oJ-K3k"/>
+                            <constraint firstItem="AUP-4q-0bb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="33" id="YZs-Xs-ohD"/>
+                            <constraint firstItem="IL9-ab-oXS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="fGH-fz-GZa"/>
+                            <constraint firstItem="AUP-4q-0bb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fk4-bp-GdM"/>
+                            <constraint firstItem="npg-CE-EpB" firstAttribute="top" secondItem="IL9-ab-oXS" secondAttribute="bottom" constant="13" id="kqG-s1-d4o"/>
+                            <constraint firstItem="IL9-ab-oXS" firstAttribute="centerX" secondItem="npg-CE-EpB" secondAttribute="centerX" id="ksE-kz-12O"/>
+                            <constraint firstItem="IL9-ab-oXS" firstAttribute="centerX" secondItem="ZgA-Qj-gMH" secondAttribute="centerX" id="pq3-fK-1ug"/>
+                            <constraint firstItem="npg-CE-EpB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vZ2-Nd-etk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="ZgA-Qj-gMH" id="K2e-Pf-lsm"/>
                         <outlet property="nameTextField" destination="IL9-ab-oXS" id="J0u-Vq-Cm7"/>
                         <outlet property="photoImageView" destination="npg-CE-EpB" id="f9J-eH-hhm"/>
+                        <outlet property="ratingControl" destination="AUP-4q-0bb" id="9ZW-39-RDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
