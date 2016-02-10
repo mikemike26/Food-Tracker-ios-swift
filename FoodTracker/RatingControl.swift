@@ -55,6 +55,8 @@ class RatingControl: UIView {
             
             button.frame = buttonFrame
         }
+        
+        updateButtonSelectionStates()
     }
     
     override func intrinsicContentSize() -> CGSize {
