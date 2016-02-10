@@ -17,8 +17,7 @@ class MealTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        fetchMeals()
+        loadSampleMeals()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,9 +28,21 @@ class MealTableViewController: UITableViewController {
     
     func loadSampleMeals() {
         
+        //fetch meal data
+        if let mealData = fetchMeals() {
+            for item in mealData {
+                let name = item["name"] as! String
+                let rating = item["rating"] as! Int
+                let photo = UIImage(named: item["photo"] as! String)
+                
+                meals.append(Meal(name: name, photo: photo, rating: rating)!)
+                
+            }
+        }
+    
     }
     
-    func fetchMeals() {
+    func fetchMeals() -> [[String: AnyObject]]?{
         
         if let path = NSBundle.mainBundle().pathForResource("meals", ofType: "json") {
             if let jsonData = NSData(contentsOfFile: path){
@@ -42,22 +53,15 @@ class MealTableViewController: UITableViewController {
                     print(error)
                 }
             
-                for (_, item) in json!.enumerate() {
-                    if let thisItem = item as? [String: AnyObject] {
-                        let image = thisItem["photo"] as! String
-                        let name = thisItem["name"] as! String
-                        let rating = thisItem["rating"] as! Int
-                        let photo = UIImage(named: image)
-                        
-                        meals.append(Meal(name: name, photo: photo, rating: rating)!)
-                    }
-                    
-                    
-                    
+                if let theseMeals = json as? [[String: AnyObject]] {
+                    return theseMeals
                 }
+                
             
             }
         }
+        
+        return nil
     }
 
     override func didReceiveMemoryWarning() {
