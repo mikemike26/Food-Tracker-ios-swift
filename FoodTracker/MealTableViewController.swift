@@ -26,6 +26,7 @@ class MealTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    //load our meal data
     func loadSampleMeals() {
         
         //fetch meal data
@@ -42,6 +43,8 @@ class MealTableViewController: UITableViewController {
     
     }
     
+    //fetch meal data
+    //currently fetches from json file, but could be altered to make an http request or pull from core data
     func fetchMeals() -> [[String: AnyObject]]?{
         
         if let path = NSBundle.mainBundle().pathForResource("meals", ofType: "json") {
