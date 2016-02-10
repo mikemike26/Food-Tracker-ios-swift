@@ -1,0 +1,18 @@
+
+[
+    {
+        "name": "Caprese Salad",
+        "photo": "meal1",
+        "rating": 4
+    },
+    {
+        "name": "Sushi",
+        "photo": "meal2",
+        "rating": 5
+    },
+    {
+        "name": "Pasta and Meatballs",
+        "photo": "meal3",
+        "rating": 3
+    }
+]
