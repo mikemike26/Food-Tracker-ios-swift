@@ -15,7 +15,13 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    /*
+    This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
+    or constructed as part of adding a new meal.
+    */
+    var meal: Meal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +29,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         //handle the text field's user input through the delegate callbacks
         nameTextField.delegate = self
         
+        checkValidMealName()
         
     }
 
@@ -40,8 +47,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         return true
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(textField: UITextField) {
         
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        checkValidMealName()
+        
+        navigationItem.title = textField.text
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -65,7 +78,24 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-
+    //MARK: Navigation
+    
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if saveButton === sender {
+            
+            //nil coalescing operator (??) is used to return the value of an optional if the optional has a value, or return a default value otherwise.
+            let name = nameTextField.text ?? ""
+            let photo = photoImageView.image
+            let rating = ratingControl.rating
+            
+            meal = Meal(name: name, photo: photo, rating: rating)
+        }
+    }
+    
     //MARK: Actions
     
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
@@ -87,5 +117,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
+    
+    //MARK: Helpers
+    
+    func checkValidMealName() {
+        //disable the save button if the text field is empty
+        
+        let text = nameTextField.text ?? ""
+        saveButton.enabled = !text.isEmpty
+    }
 }
 
